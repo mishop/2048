@@ -1,8 +1,12 @@
 # 2048 Alphabet
 
+Version of [2048 game](https://github.com/gabrielecirulli/2048) with English alphabet letters.
 Made just for fun. [Play it here!](http://2048alphabet.com/)
 
-Many thanks to [rayhaanj](https://github.com/rayhaanj), [Mechazawa](https://github.com/Mechazawa), [grant](https://github.com/grant), [remram44](https://github.com/remram44) and [ghoullier](https://github.com/ghoullier) for the many other good contributions.
+### Contributions
+
+ - [Gabriele Cirulli](https://github.com/gabrielecirulli) Made algoritham of game, and programed code of this game.
+ - [Misho M. Petkovic](https://twitter.com/mishomp) made design and idea of game with letters.
 
 ### Screenshot
 
