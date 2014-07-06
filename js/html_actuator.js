@@ -60,61 +60,24 @@ HTMLActuator.prototype.addTile = function (tile) {
   if (tile.value > 2048) classes.push("tile-super");
 
   this.applyClasses(wrapper, classes);
-
+  var outputtext = new Array();
+  outputtext[0] = "";
+  outputtext[1] = "A";
+  outputtext[2] = "B";
+  outputtext[3] = "C";
+  outputtext[4] = "D";
+  outputtext[5] = "E";
+  outputtext[6] = "F";
+  outputtext[7] = "G";
+  outputtext[8] = "H";
+  outputtext[9] = "I";
+  outputtext[10] = "J";
+  outputtext[11] = "K";
+  outputtext[12] = "L";
+  outputtext[13] = "M";
   inner.classList.add("tile-inner");
-   if (tile.value == 2)
-	{
-  inner.textContent="A";
-  }
-else if (tile.value == 4)
-{
-  inner.textContent="B";
-  }
-else if (tile.value == 8)
-{
-  inner.textContent="C";
-  }
-else if (tile.value == 16)
-{
-  inner.textContent="D";
-  }
-else if (tile.value == 32)
-{
-  inner.textContent="E";
-  }
-else if (tile.value == 64)
-{
-  inner.textContent="F";
-  }
-else if (tile.value == 128)
-{
-  inner.textContent="G";
-  }
-else if (tile.value == 256)
-{
-  inner.textContent="H";
-  }
-else if (tile.value == 512)
-{
-  inner.textContent="I";
-  }
-else if (tile.value == 1024)
-{
-  inner.textContent="J";
-  }
-else if (tile.value == 2048)
-{
-  inner.textContent="K";
-  }
-else if (tile.value == 4096)
-{
-  inner.textContent="L";
-  }
-else if (tile.value == 8192)
-{
-  inner.textContent="M";
-  }
-
+  inner.textContent = outputtext[(Math.log(tile.value) / Math.LN2)] || '';
+  
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
     window.requestAnimationFrame(function () {
@@ -181,10 +144,46 @@ HTMLActuator.prototype.message = function (won) {
 
   this.messageContainer.classList.add(type);
   this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+  this.sharingContainer.appendChild(this.showSocialButtons());
 };
 
 HTMLActuator.prototype.clearMessage = function () {
   // IE only takes one value to remove at a time.
   this.messageContainer.classList.remove("game-won");
   this.messageContainer.classList.remove("game-over");
+};
+
+HTMLActuator.prototype.showSocialButtons = function () {
+    var text = "I scored " + this.score + " points at 2048 Alphabet, a game where you join letter to score high! @mishopet"
+    var html =
+                '<div id="social-buttons" class="fadeable fade">'
+	    + '<ul class="social">'
+            + '<li class="reddit"><div class="fb-like" data-href="http://2048alphabet.com" data-layout="box_count" data-width="50" ></div></li>'
+            + '<li class="gplus"><div class="g-plusone-frame"><div class="g-plusone" data-size="tall" data-href="http://2048alphabet.com/"></div></div></li>'
+            + '<li class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://2048alphabet.com/" data-text="'+ text +'" data-count="vertical" data-hashtags="2048alphabet" >Tweet</a></li></ul>'
+            + '<div id="fb-root"></div>'
+            + '</div>';
+    document.getElementById( 'viewport' ).insertAdjacentHTML( 'beforeEnd', html );
+    
+    var script = document.createElement( 'script' );
+    script.async = true;
+    script.src = document.location.protocol + '//connect.facebook.net/en_US/all.js#xfbml=1&appId=239765196226361';
+    document.getElementById( 'fb-root' ).appendChild( script );
+
+    script = document.createElement( 'script' );
+    script.async = true;
+    script.src = document.location.protocol + '//platform.twitter.com/widgets.js';
+    document.getElementById( 'social-buttons' ).appendChild( script );
+
+    script = document.createElement( 'script' );
+    script.async = true;
+    script.src = document.location.protocol + '//apis.google.com/js/plusone.js';
+    document.getElementById( 'social-buttons' ).appendChild( script );
+
+    window.setTimeout( function () {
+
+        document.getElementById( 'social-buttons' ).removeAttribute( 'class' );
+
+    }, 1000 );
+   return html
 };
