@@ -1,13 +1,12 @@
 # 2048 Alphabet
 
 Version of [2048 game](https://github.com/gabrielecirulli/2048) with English alphabet letters.
-Made just for fun. [Play it here!](http://2048alphabet.com/)
+Made just for fun. [Play it here!](http://2048alphabet.com/). Game inspired by [Threes](http://www.igrice-tigrice.com/mozgalice/threes/)
 
 ### Contributions
 
  - [Gabriele Cirulli](https://github.com/gabrielecirulli) Made algoritham of game, and programed code of this game.
  - [Misho M. Petkovic](https://twitter.com/mishomp) made design and idea of game with letters.
-
 ### Screenshot
 
 <p align="center">
