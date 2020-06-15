@@ -1,7 +1,7 @@
 # 2048 Alphabet
 
 Version of [2048 game](https://github.com/gabrielecirulli/2048) with English alphabet letters.
-Made just for fun. [Play it here!](http://2048alphabet.com/). Game inspired by [Threes](http://www.igrice-tigrice.com/mozgalice/threes/)
+Made just for fun. [Play it here!](http://2048alphabet.com/). Game inspired by [Threes](https://play.google.com/store/apps/details?id=com.Misho.game1024)
 
 ### Contributions
 
